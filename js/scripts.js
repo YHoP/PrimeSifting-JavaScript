@@ -27,3 +27,25 @@ var isPrimeNumber = function(number){
   }
   return isPrime;
 }
+
+var getPrimeNumber = function(number){
+  var primeArray = [];
+  var numberArray = [];
+  var numberArray = listAllNumbersToArray(number, numberArray);
+  for (var i in numberArray){
+    if (isPrimeNumber(numberArray[i])){
+      primeArray.push(numberArray[i]);
+    }
+  }
+  console.log(primeArray);
+  return primeArray;
+}
+
+$(document).ready(function() {
+  $("form#PrimeFinder").submit(function(event) {
+    $(".result").empty();
+    var userNumber = $("input#number").val();
+    $(".result").text(getPrimeNumber(userNumber)).fadeIn();
+    event.preventDefault();
+  });
+});

@@ -16,3 +16,9 @@ describe('isPrimeNumber', function() {
     expect(isPrimeNumber(13)).to.equal(true);
   });
 });
+
+describe('getPrimeNumber', function() {
+  it("If its prime number, return true", function() {
+    expect(getPrimeNumber(13)).to.eql([13, 11, 7, 5, 3, 2]);
+  });
+});
